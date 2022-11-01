@@ -63,13 +63,12 @@ namespace SearchTriplet
         public Dictionary<string, int> ResultTripletSearch()
         {
             Task<Dictionary<string, int>> task1 = Task.Factory.StartNew(Search1);
-            Task<Dictionary<string, int>> task2 = Task.Factory.StartNew(Search2);
+            Dictionary<string, int> dictionary2 = Search2();
 
-            Task.WaitAll(task1, task2);
+            Task.WaitAll(task1);
 
             var dictionary1 = task1.Result;
-            var dictionary2 = task2.Result;
-
+            
             foreach (var item in dictionary2)
             {
                 if (dictionary1.ContainsKey(item.Key))
