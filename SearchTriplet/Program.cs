@@ -11,9 +11,8 @@ namespace SearchTriplet
         static void Main(string[] args)
         {
             Console.WriteLine(" Введите путь к файлу");
-            //string path = Console.ReadLine();
-            string path = @"c:\ros.txt";
-
+            string path = Console.ReadLine();
+            
             Stopwatch stopwatch = new Stopwatch();
             stopwatch.Start();
 
